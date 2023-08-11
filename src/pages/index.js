@@ -1,0 +1,7 @@
+export { default as Home } from './Home'
+export { default as CreatePost } from './CreatePost'
+export { default as Comment } from './Comment'
+export { default as Login } from './Login'
+export { default as Signin } from './Signin'
+export { default as Swipe } from './Swipe'
+export { default as NewsFeed } from './NewsFeed'

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@300;400&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins', sans-serif;
+  background: #13131a;
+}
+
+.logo {
+  font-family: 'Cedarville Cursive', cursive;
+  background: linear-gradient(90deg, #00dbde, #fc00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1,
+ul,
+li,
+span,
+p {
+  background: transparent;
+}
+
+*::-webkit-scrollbar {
+  background: transparent;
+  padding: 4px;
+  width: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #5f5f5f;
+  width: 7px;
+  border-radius: 10px;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
