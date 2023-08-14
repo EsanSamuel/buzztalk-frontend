@@ -93,9 +93,11 @@ const Home = () => {
 
     const handleLike = async (id) => {
         try {
-            const response = await axios.put(`http://localhost:3001/api/v1/post/${id}`);
-            console.log(response.data)
-            setLike(response.data);
+            const response = await axios.post(`http://localhost:3001/api/v1/post/${id}`);
+            console.log(response.status)
+            if (response.status === 200) {
+                setLike(like + 1);
+            }
         } catch (error) {
             console.error(error);
         }
@@ -196,12 +198,12 @@ const Home = () => {
                                 <div className='bg-transparent'>{thread.map((data) => (
                                     <a href={data.url}><div key={data.id} className='bg-transparent cursor-pointer '>
                                         <div className='flex justify-between bg-transparent'>
-                                            <h1 className='text-[12px]   text-left text-[#eaeaea] hover:text-[#26a7de] '>{shorten(data.title)}</h1><BsThreeDots className='bg-transparent' />
+                                            <h1 className='text-[12px]   text-left text-[#eaeaea] hover:text-[#8c6dfd] '>{shorten(data.title)}</h1><BsThreeDots className='bg-transparent' />
                                         </div>
                                         <p className='text-left text-[10px] pb-3 text-[#5f5f5f]'>{data.publishedAt}</p>
                                     </div></a>
                                 ))}
-                                    <Link to='/news'><h1 className='text-[#26a7de] cursor-pointer'>View more</h1></Link>
+                                    <Link to='/news'><h1 className='text-[#8c6dfd] cursor-pointer text-[13px]'>View more</h1></Link>
                                 </div>
                             ) : (
                                 <div className='text-center bg-transparent mt-10 pb-10'>

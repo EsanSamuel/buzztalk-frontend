@@ -14,7 +14,7 @@ import { BiNews } from 'react-icons/bi'
 
 const Navbar = () => {
     const [navbar, setNavbar] = useState(false)
-    const [isActive, setIsActive] = useState(false)
+    const [isActive, setIsActive] = useState(true)
     const signin = () => {
         provider.setCustomParameters({ prompt: 'select_account' })
         signInWithPopup(auth, provider)
@@ -44,7 +44,7 @@ const Navbar = () => {
             />
             {!navbar && <AiOutlineMenu onClick={() => setNavbar(true)} className='sm:hidden text-[#e1d9d1] text-[25px] mt-2 bg-transparent' />}
             {navbar && <AiOutlineClose onClick={() => setNavbar(false)} className='sm:hidden text-[#e1d9d1] text-[25px] mt-2 bg-transparent' />}
-            <div className='flex gap-3 bg-transparent sm:flex hidden'>{signin && <img src={users.photoURL} className='w-[40px] h-[40px rounded-full' />}{signin ? (
+            <div className='flex gap-3 bg-transparent sm:flex hidden'>{signin && <img src={users.photoURL} className='[w-40px] h-[40px] rounded-full bg-transparent' />}{signin ? (
                 <button onClick={() => signin()} className='xl:flex hidden bg-transparent rounded-[100px] border border-[#5f5f5f] py-1 px-3 text-[#e1d9d1]'><AiOutlineUser className='bg-transparent text-[30px] text-[#5f5f5f] ' /><span className='mt-1'>Sign Up</span></button>
             ) : (
                 <button onClick={() => signout()} className='xl:flex hidden bg-transparent rounded-[100px] border border-[#5f5f5f] py-1 px-4 text-[#e1d9d1]'><span className='mt-1'>Sign Out</span></button>
@@ -63,7 +63,7 @@ const Navbar = () => {
                             <li onClick={() => signin()} className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><BiNews className='text-[20px] bg-transparent' />Sign In</li>
                         </ul>
 
-                        <hr className='w-full mt-5 text-[#e1d9d1]' />
+                        <hr className='w-full mt-5 text-[#5f5f5f]' />
 
                         <ul className='flex flex-col mt-10 text-[#e1d9d1] space-y-3 cursor-pointer'>
                             <li onClick={() => signout()} className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><AiOutlineHome className='text-[20px] bg-transparent' />Home</li>

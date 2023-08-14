@@ -43,7 +43,7 @@ const NewsFeed = () => {
                         {thread.map((data) => (
                             <a href={data.url}><div key={data.id} className='bg-transparent cursor-pointer '>
                                 <div className='flex justify-between bg-transparent gap-5'>
-                                    <h1 className='text-[12px]   text-left text-[#eaeaea]  hover:text-[#26a7de] '>{shorten2(data.title)}</h1><BsThreeDots className='bg-transparent' />
+                                    <h1 className='text-[12px]   text-left text-[#eaeaea]  hover:text-[#8c6dfd] '>{shorten2(data.title)}</h1><BsThreeDots className='bg-transparent' />
                                 </div>
                                 <p className='text-left text-[10px] pb-5 text-[#5f5f5f]'>{data.publishedAt}</p>
                             </div></a>
@@ -71,7 +71,7 @@ const NewsFeed = () => {
                             <Link to='/home' className='bg-transparent'> <li onClick={() => setIsActive(true)} className={`flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded ${isActive && 'bg-[#8c6dfd] text-[#eaeaea]'}`}><AiOutlineHome className='text-[20px] bg-transparent' /><span className=''>Home</span></li></Link>
                             <li className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><RiCommunityLine className='text-[20px] bg-transparent' />Community</li>
                             <li className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><AiOutlineHome className='text-[20px] bg-transparent' />Marketplace</li>
-                            <Link to='/news' className='bg-transparent'><li className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><RiNftFill className='text-[20px] bg-transparent' />News feed</li></Link>
+                            <Link to='/news' className='bg-transparent'><li className='flex gap-3 bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><RiNftFill className='text-[20px] bg-transparent' />News feed</li></Link>
                         </ul>
 
                         <hr className='w-full mt-5 text-[#e1d9d1]' />

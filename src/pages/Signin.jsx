@@ -4,7 +4,7 @@ import img from '../assets/img1.svg'
 import { auth, provider } from '../components/Firebase'
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { AuthContext } from '../Context/Auth'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Input = ({ title, placeholder, handleChange, type }) => (
     <div className='pb text-[#eaeaea] bg-transparent'>
@@ -21,6 +21,7 @@ const Signin = () => {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
     const [signedIn, setSignedIn] = useState(false)
+    const [inputType, setInputType] = useState('password')
 
     const signin = () => {
         provider.setCustomParameters({ prompt: 'select_account' })
@@ -64,9 +65,16 @@ const Signin = () => {
         }
     }
 
+    const showpassword = () => {
+        if (inputType === 'text') {
+            setInputType('password')
+        } else {
+            setInputType('text')
+        }
+    }
 
     return (
-        <div className='p-5 sm:flex justify-between gap-3'>
+        <div className='sm:p-5 p-3  sm:flex justify-between gap-3'>
             <div className='bg-[#8c6dfd] w-auto p-10 rounded card flex flex-col text-white '>
                 <h1 className='pb-20'>BuzzTalk</h1>
                 <h1 className='text-[40px] text-white pb-10 '>Start your journey with us!</h1>
@@ -82,12 +90,18 @@ const Signin = () => {
                 <div className='w-full bg-transparent py-10 space-y-6'>
                     <Input className='' title='Enter name' placeholder='Enter name..' handleChange={(e) => setName(e.target.value)} type='text' />
                     <Input className='' title='Enter email' placeholder='Enter email..' handleChange={(e) => setEmail(e.target.value)} type='email' />
-                    <Input className='' title='Enter Password' placeholder='Enter password..' handleChange={(e) => setPassword(e.target.value)} type='password' />
+                    <Input className='' title='Enter Password' placeholder='Enter password..' handleChange={(e) => setPassword(e.target.value)} type={inputType} />
+                    <div className='flex bg-transparent gap-3'>
+                        <input type='checkbox' className='flex flex-start mt-[3px]' onClick={showpassword} />
+                        <p className='text-[#eaeaea]'>Show password</p>
+                    </div>
                 </div>
 
-                <button onClick={handleSubmit} className='bg-[#8c6dfd] text-white py-3 px-10 flex flex-start rounded'>Submit</button>
+                <button onClick={handleSubmit} className='bg-[#8c6dfd] hover:opacity-50 text-white py-3 px-10 flex flex-start rounded'>Submit</button>
 
-                <button onClick={signin} className='w-full border mt-10 p-3 rounded border-[#5f5f5f] text-white'><FcGoogle className='bg-transparent text-[20px] absolute' />Sign in with Google</button>
+                <button onClick={signin} className='w-full hover:opacity-50 border mt-10 p-3 rounded border-[#5f5f5f] text-white'><FcGoogle className='bg-transparent text-[20px] absolute' />Sign in with Google</button>
+
+                <p className='mt-10 text-[#eaeaea]'>Already have an account? <Link to='/login' className='bg-transparent'><span className='underline'>login</span></Link></p>
             </div>
         </div>
     )

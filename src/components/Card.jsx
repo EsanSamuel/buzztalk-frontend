@@ -8,7 +8,7 @@ import { VscVerifiedFilled } from 'react-icons/vsc'
 import { BsThreeDots } from 'react-icons/bs'
 import io from 'socket.io-client'
 import { CgProfile } from 'react-icons/cg'
-const socket = io.connect('http://localhost:3001')
+//const socket = io.connect('http://localhost:3001')
 
 const Card = ({ _id, details, name, image, ProfileImage, like, handleLike, handleDelete, likepost }) => {
     const [imageModal, setImageModal] = useState(false)
@@ -28,9 +28,9 @@ const Card = ({ _id, details, name, image, ProfileImage, like, handleLike, handl
 
     }, [])
 
-    const joinRoom = () => {
+   /* const joinRoom = () => {
         socket.emit('join_room', room)
-    }
+    }*/
 
     const handleSave = (saved) => {
         console.log(saved)
@@ -75,16 +75,20 @@ const Card = ({ _id, details, name, image, ProfileImage, like, handleLike, handl
             </div>
             <img src={image} className='rounded sm:h-[370px] h-[270px] bg-transparent w-full contain' onClick={() => setImageModal(true)} />
 
+            {imageModal && (
+                <div className='fixed sm:top-20 sm:bottom-20 top-[30%] bottom-[30%] z-10 bg-[#1c1c24] sm:p-2 p-1 card rounded sm:left-20 sm:right-20 left-2 right-2 border border-[#5f5f5f] animate-slide-in3'>
+                <img src={image} className='rounded h-full bg-transparent w-full contain p-0 a' onClick={() => setImageModal(false)}  />
+                </div>
+            )}
 
-
-            {/*{imageModal && (
-                <img src={image} className='rounded h-[370px] bg-transparent w-full contain p-0 a' />
-            )}*/}
+           
             <div className='flex justify-between w-full p-5 mt-2 text-[20px] bg-transparent'>
-                <label onClick={() => handleLike(_id)} className={`flex gap-2 ${isActive && 'text-[#43affc]'}`}> <AiFillLike className={`bg-transparent `} /> <span className='text-[15px]'>{likepost} Likes</span></label>
+                <label onClick={()=>handleLike(_id)} className={`flex gap-2 ${isActive && 'text-[#43affc]'}`}> <AiFillLike className={`bg-transparent `} /> <span className='text-[15px]'>{likepost} Likes</span></label>
                 <Link to={`/comment/${_id}/${name}/${details}`}> <label className='flex gap-2'><FaCommentDots className='bg-transparent' /><span className='text-[15px]'>Comment</span></label></Link>
                 <label className='flex gap-2' onClick={() => handleSave(saved?._id)}> <AiOutlineRetweet className='bg-transparent' /><span className='text-[15px]'>Save</span></label>
             </div>
+
+           
         </div>
     )
 }
