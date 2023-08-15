@@ -67,7 +67,7 @@ const Card = ({ _id, details, name, image, ProfileImage, like, handleLike, handl
                         {!modal && <BsThreeDots className='text-[20px]' onClick={() => setModal(true)} />}
                         {modal && <BsThreeDots className='text-[20px]' onClick={() => setModal(false)} />}
                         {modal && <div className='animate-slide-in2 float-right flex align-right card w-auto p-2 rounded border cursor-pointer border-[#5f5f5f]' onClick={() => handleDelete(_id)}>
-                            <h1 className=''>Delete Post</h1>
+                            <h1 className=''>Delete</h1>
                         </div>}
                     </div>
                 </div>
