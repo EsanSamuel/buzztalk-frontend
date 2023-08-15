@@ -84,7 +84,7 @@ const Signin = () => {
                     <img src={img} className='bg-transparent h-[400px]' />
                 </div>
             </div>
-            <div className=' text-center rounded card sm:p-20 px-5 py-10 sm:mt-0 mt-10 w-full bg-[#3a3a43]'>
+            <div className=' text-center rounded card sm:p-20 px-5 py-10 sm:mt-0 mt-10 w-full bg-[#1c1c24]'>
                 <h1 className='text-white text-[30px]'>Welcome to <span className='logo'>BuzzTalk</span></h1>
                 {/*<p className='text-white flex flex-start'>Sign in to BuzzTalk</p>*/}
                 <div className='w-full bg-transparent py-10 space-y-6'>
