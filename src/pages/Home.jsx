@@ -30,7 +30,7 @@ const Home = () => {
             setLoading(true)
 
             try {
-                const response = await fetch('http://localhost:3001/api/v1/post', {
+                const response = await fetch('https://buzztalk-api-e1uj.vercel.app/api/v1/post', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const Home = () => {
     //liking post
     const LikePost = async (id) => {
         try {
-            await fetch('http://localhost:3001/api/v1/post', {
+            await fetch('https://buzztalk-api-e1uj.vercel.app/api/v1/post', {
                 method: 'Put',
                 headers: {
                     'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const Home = () => {
 
     const handleLike = async (id) => {
         try {
-            const response = await axios.post(`http://localhost:3001/api/v1/post/${id}`);
+            const response = await axios.post(`https://buzztalk-api-e1uj.vercel.app/api/v1/post/${id}`);
             console.log(response.status)
             if (response.status === 200) {
                 setLike(like + 1);
@@ -116,7 +116,7 @@ const Home = () => {
     //deleting posts
     const handleDelete = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:3001/api/v1/post/${id}`)
+            const response = await axios.delete(`https://buzztalk-api-e1uj.vercel.app/api/v1/post/${id}`)
             //console.log(response.data)
             setDeleted(true)
         } catch (error) {
