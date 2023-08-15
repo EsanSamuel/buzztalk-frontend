@@ -59,7 +59,7 @@ const Card = ({ _id, details, name, image, ProfileImage, like, handleLike, handl
     }*/
 
     return (
-        <div className='h-auto mt-5 w-full card rounded-[10px]   text-[#e1d9d1]'>
+        <div className='h-auto mt-5 w-full card rounded-[10px]   text-[#e1d9d1]'  onClick={() => setModal(false)}>
             <div className='space-y-5 pb-5 p-5 bg-transparent'>
                 <div className='flex justify-between'>
                     <div className='flex gap-3 bg-transparent'>{ProfileImage ? <img src={ProfileImage} className='w-[40px] h-[40px] rounded-full bg-transparent' /> : <CgProfile className='text-[40px] text-[#5f5f5f]' />} <h1 className='mt-2'>{name}</h1> <VscVerifiedFilled className='sm:mt-2.5 mt-3' /></div>
