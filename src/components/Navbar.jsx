@@ -66,7 +66,7 @@ const Navbar = () => {
                         <hr className='w-full mt-5 text-[#5f5f5f]' />
 
                         <ul className='flex flex-col mt-10 text-[#e1d9d1] space-y-3 cursor-pointer'>
-                            <li onClick={() => signout()} className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><AiOutlineHome className='text-[20px] bg-transparent' />Home</li>
+                            <li onClick={() => signout()} className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><AiOutlineHome className='text-[20px] bg-transparent' />Sign Out</li>
                             <li className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><AiOutlineHome className='text-[20px] bg-transparent' />Community</li>
                             <li className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><AiOutlineHome className='text-[20px] bg-transparent' />Marketplace</li>
                             <li className='flex gap-3 hover:bg-[#8c6dfd] hover:text-[#eaeaea] p-3 rounded'><AiOutlineHome className='text-[20px] bg-transparent' />News feed</li>
