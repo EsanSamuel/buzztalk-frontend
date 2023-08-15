@@ -57,7 +57,7 @@ const Comment = () => {
 
     if (form.comments) {
       try {
-        const response = await fetch(`http://localhost:3001/api/v1/comment`, {
+        const response = await fetch(`https://buzztalk-api-e1uj.vercel.app/api/v1/comment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const Comment = () => {
 
 
       try {
-        const response = await fetch(`http://localhost:3001/api/v1/comment`, {
+        const response = await fetch(`https://buzztalk-api-e1uj.vercel.app/api/v1/comment`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
