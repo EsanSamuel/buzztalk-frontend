@@ -105,7 +105,7 @@ const Home = () => {
 
     //fecthing news api
     useEffect(() => {
-        fetch('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=apple&from=2023-08-03&to=2023-08-03&sortBy=popularity&pageSize=10&apiKey=716a8281ffbf435f94206cf2c4b2c6b0',{mode: 'no-cors'})
+        fetch('https://newsapi.org/v2/everything?q=apple&from=2023-08-03&to=2023-08-03&sortBy=popularity&pageSize=10&apiKey=716a8281ffbf435f94206cf2c4b2c6b0',{mode: 'no-cors'})
             .then(res => res.json())
             .then(data => {
                 setThread(data.articles)
