@@ -96,7 +96,7 @@ const Login = () => {
           <img src={img} className='bg-transparent h-[400px]' />
         </div>
       </div>
-      <div className=' text-center rounded card sm:p-20 px-5 py-10 sm:mt-0 mt-10 w-full bg-[#3a3a43]'>
+      <div className=' text-center rounded card sm:p-20 px-5 py-10 sm:mt-0 mt-10 w-full bg-[#1c1c24]'>
         {invalid && <h1 className='pb-3 text-[#ff3632] '>*Wrong Password</h1>}
         {notFound && <h1 className='pb-3 text-[#ff3632] '>*User does not exist</h1>}
         <h1 className='text-white text-[30px]'>Login to <span className='logo'>BuzzTalk</span></h1>
