@@ -51,7 +51,7 @@ const Login = () => {
     e.preventDefault()
     if (password && email) {
       try {
-        axios.post('http://localhost:3001/api/v1/login', { email, password })
+        axios.post('https://buzztalk-api-e1uj.vercel.app/api/v1/login', { email, password })
           .then(result => {
             console.log(result)
             if (result.data === 'Success') {
