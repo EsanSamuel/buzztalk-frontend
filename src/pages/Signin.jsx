@@ -9,7 +9,7 @@ import { useNavigate, Link } from 'react-router-dom'
 const Input = ({ title, placeholder, handleChange, type }) => (
     <div className='pb text-[#eaeaea] bg-transparent'>
         <h1 className='flex flex-start pb-5'>{title}</h1>
-        <input className='w-full bg-transparent border border-[#5f5f5f] rounded h-[40px]' placeholder={placeholder}
+        <input className='w-full bg-[#3a3a43] border border-[#5f5f5f] rounded h-[40px]' placeholder={placeholder}
             onChange={handleChange}
             type={type} />
     </div>
