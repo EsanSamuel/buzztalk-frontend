@@ -44,7 +44,7 @@ const Navbar = () => {
             />
             {!navbar && <AiOutlineMenu onClick={() => setNavbar(true)} className='sm:hidden text-[#e1d9d1] text-[25px] mt-2 bg-transparent' />}
             {navbar && <AiOutlineClose onClick={() => setNavbar(false)} className='sm:hidden text-[#e1d9d1] text-[25px] mt-2 bg-transparent' />}
-            <div className='flex gap-3 bg-transparent sm:flex hidden'>{signin ? (
+            <div className='flex gap-3 bg-transparent sm:flex hidden'>{signin && <img src={users.photoURL} className='[w-40px] h-[40px] rounded-full bg-transparent' />}{signin ? (
                 <button onClick={() => signin()} className='xl:flex hidden bg-transparent rounded-[100px] border border-[#5f5f5f] py-1 px-3 text-[#e1d9d1]'><AiOutlineUser className='bg-transparent text-[30px] text-[#5f5f5f] ' /><span className='mt-1'>Sign Up</span></button>
             ) : (
                 <button onClick={() => signout()} className='xl:flex hidden bg-transparent rounded-[100px] border border-[#5f5f5f] py-1 px-4 text-[#e1d9d1]'><span className='mt-1'>Sign Out</span></button>
