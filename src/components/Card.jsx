@@ -76,7 +76,7 @@ const Card = ({ _id, details, name, image, ProfileImage, like, handleLike, handl
             <img src={image} className='rounded sm:h-[370px] h-auto bg-transparent w-full contain' onClick={() => setImageModal(true)} />
 
             {imageModal && (
-                <div className='fixed sm:top-20 sm:bottom-20 top-[30%] bottom-[30%] z-10 bg-[#1c1c24] sm:p-2 p-1 card rounded sm:left-20 sm:right-20 left-2 right-2 border border-[#5f5f5f] animate-slide-in3'>
+                <div className='fixed sm:top-20 sm:bottom-20 top-[20%] bottom-[20%] z-10 bg-[#1c1c24] sm:p-2 p-1 card rounded sm:left-20 sm:right-20 left-2 right-2 border border-[#5f5f5f] animate-slide-in3'>
                 <img src={image} className='rounded h-full bg-transparent w-full contain p-0 a' onClick={() => setImageModal(false)}  />
                 </div>
             )}
